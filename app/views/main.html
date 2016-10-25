@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Tic-Tac-Toe</title>
+    <link rel='stylesheet' type='text/css' href='styles/ui.css'>
+</head>
+
+<body>
+    <div class='main-container'>
+      <div id="scoreboard" score>
+                <div id="wins" ng-init='wins=0'>You: {{wins}}</div>
+                <div id="losses" ng-init='losses=0'>AI: {{losses}}</div>
+                <div id="draws" ng-init='draws=0'>Draws: {{draws}} </div>
+            </div>
+        <div class='board' ng-click='button_clicked || clickCell()' ng-disabled="button_clicked">
+              
+            <!-- data-indx following cell divs represents cell index in 1D array representation -->
+            <div class='cell' data-indx="0"></div>
+            <div class='cell' data-indx="1"></div>
+            <div class='cell' data-indx="2"></div>
+            <div class='cell' data-indx="3"></div>
+            <div class='cell' data-indx="4"></div>
+            <div class='cell' data-indx="5"></div>
+            <div class='cell' data-indx="6"></div>
+            <div class='cell' data-indx="7"></div>
+            <div class='cell' data-indx="8"></div>
+        </div>
+
+        <div class='control'>
+            <!-- div.intial displays the starting controls -->
+            <div class='intial'>
+                <div class='start' ng-click="startGame()"> Start </div>
+            </div>
+            <div class='ended'>
+                <!-- div.ingame displays in-game messages and controls -->
+                <div class='ingame' id="human">It's your turn ...</div>
+                <div class='ingame' id="won">You won!</div>
+                <div class='ingame' id="lost" style="color:red;">You lost !</div>
+                <div class='ingame' id="draw" style="color:grey;">It's a Draw</div>
+                <div class='reset' ng-click="resetGame()"> Reset </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/game.js"></script>
+    <script src="scripts/ai.js"></script>
+</body>
+
+</html>
